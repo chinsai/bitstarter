@@ -82,10 +82,10 @@ if(require.main == module) {
         .parse(process.argv);
     var checkJson;
     if(program.file != null){
-      checkHtmlFile(program.file, program.checks);
+      checkJson = checkHtmlFile(program.file, program.checks);
     }
     else{
-      checkHtmlFile(program.url, program.checks);
+      checkJson = checkHtmlFile(program.url, program.checks);
     }
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
